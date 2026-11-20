@@ -1,0 +1,29 @@
+{
+  "_comment": "Quality gates enforced by `payrag eval` and tests/test_eval_gate.py. Plain keys are minimums, keys ending in _max are maximums. 'offline' gates are regression floors set a little below the measured baseline; 'claude' gates are the targets for the LLM agent.",
+  "offline": {
+    "retrieval.recall@5": 0.85,
+    "retrieval.mrr": 0.80,
+    "retrieval.ndcg@5": 0.80,
+    "routing.accuracy": 0.80,
+    "routing.macro_f1": 0.80,
+    "answer.fact_recall": 0.65,
+    "answer.citation_precision": 0.65,
+    "answer.groundedness": 0.95,
+    "abstention.refusal_recall": 0.875,
+    "abstention.false_refusal_rate_max": 0.05,
+    "efficiency.error_rate_max": 0.0
+  },
+  "claude": {
+    "retrieval.recall@5": 0.90,
+    "retrieval.mrr": 0.85,
+    "routing.accuracy": 0.90,
+    "routing.macro_f1": 0.90,
+    "answer.fact_recall": 0.85,
+    "answer.citation_precision": 0.80,
+    "answer.groundedness": 0.70,
+    "abstention.refusal_recall": 0.875,
+    "abstention.false_refusal_rate_max": 0.05,
+    "efficiency.error_rate_max": 0.05,
+    "efficiency.mean_tool_calls_max": 6
+  }
+}

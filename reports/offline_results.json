@@ -1,0 +1,2479 @@
+{
+  "n_questions": 60,
+  "n_in_scope": 52,
+  "n_out_of_scope": 8,
+  "retrieval": {
+    "recall@1": 0.8076923076923077,
+    "recall@3": 0.8269230769230769,
+    "recall@5": 0.9038461538461539,
+    "precision@1": 0.8076923076923077,
+    "precision@3": 0.2756410256410256,
+    "precision@5": 0.18076923076923077,
+    "hit@1": 0.8076923076923077,
+    "hit@3": 0.8269230769230769,
+    "hit@5": 0.9038461538461539,
+    "mrr": 0.8474358974358975,
+    "ndcg@5": 0.8487511294349205
+  },
+  "routing": {
+    "accuracy": 0.8666666666666667,
+    "macro_f1": 0.8623256373256374,
+    "weighted_f1": 0.8675685425685425,
+    "per_label": {
+      "fraud_detection": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333333333333333,
+        "support": 7
+      },
+      "chargebacks_disputes": {
+        "precision": 0.875,
+        "recall": 0.875,
+        "f1": 0.875,
+        "support": 8
+      },
+      "pci_compliance": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091,
+        "support": 6
+      },
+      "authorization_settlement": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "support": 8
+      },
+      "interchange_pricing": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "support": 6
+      },
+      "cross_border_fx": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.7499999999999999,
+        "support": 6
+      },
+      "merchant_onboarding_kyc": {
+        "precision": 0.8,
+        "recall": 0.6666666666666666,
+        "f1": 0.7272727272727272,
+        "support": 6
+      },
+      "real_time_payments": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 5
+      },
+      "out_of_scope": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 8
+      }
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "fraud_detection",
+      "chargebacks_disputes",
+      "pci_compliance",
+      "authorization_settlement",
+      "interchange_pricing",
+      "cross_border_fx",
+      "merchant_onboarding_kyc",
+      "real_time_payments",
+      "out_of_scope"
+    ],
+    "matrix": [
+      [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        6,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ]
+    ]
+  },
+  "answer": {
+    "fact_recall": 0.6923076923076923,
+    "citation_precision": 0.6826923076923077,
+    "groundedness": 1.0,
+    "exact_fact_match_rate": 0.6923076923076923
+  },
+  "abstention": {
+    "refusal_recall": 1.0,
+    "refusal_precision": 1.0,
+    "false_refusal_rate": 0.0,
+    "binary_confusion": {
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "tn": 52
+    }
+  },
+  "efficiency": {
+    "mean_tool_calls": 3.566666666666667,
+    "latency_p50_s": 0.0008,
+    "latency_p95_s": 0.001,
+    "error_rate": 0.0
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "question": "How many card-not-present authorization attempts in 10 minutes trigger a velocity flag?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-001"
+      ],
+      "retrieved": [
+        "FR-001",
+        "FRA-N003",
+        "FRA-N004",
+        "FRA-N002",
+        "FR-003",
+        "AS-004",
+        "AS-001",
+        "AUT-N004"
+      ],
+      "cited": [
+        "FR-001"
+      ],
+      "answer": "A card is flagged when more than 5 card-not-present authorization attempts occur within 10 minutes. NovaPay's risk engine applies velocity rules to card-not-present (CNP) traffic.",
+      "tool_calls": 4,
+      "latency_s": 0.0014,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q02",
+      "question": "What happens to a transaction once it is flagged by the CNP velocity rules?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-001"
+      ],
+      "retrieved": [
+        "FR-001",
+        "FRA-N001",
+        "FRA-N004",
+        "FRA-N003",
+        "FR-004",
+        "CB-004",
+        "IP-001",
+        "KYC-004",
+        "AS-003"
+      ],
+      "cited": [
+        "FR-001"
+      ],
+      "answer": "NovaPay's risk engine applies velocity rules to card-not-present (CNP) traffic. A card is flagged when more than 5 card-not-present authorization attempts occur within 10 minutes.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 0.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q03",
+      "question": "At what account takeover risk score are merchant payouts frozen automatically?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-002"
+      ],
+      "retrieved": [
+        "FR-002",
+        "FRA-N001",
+        "FRA-N009",
+        "FRA-N004",
+        "FRA-N003",
+        "FX-004",
+        "KYC-001",
+        "REA-N007",
+        "REA-N001",
+        "AUT-N009"
+      ],
+      "cited": [
+        "FR-002"
+      ],
+      "answer": "When the ATO risk score is above 820 NovaPay automatically freezes merchant payouts. Account takeover (ATO) is detected by combining login and profile-change signals.",
+      "tool_calls": 4,
+      "latency_s": 0.001,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q04",
+      "question": "What is the SLA for the ATO manual review queue?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-002"
+      ],
+      "retrieved": [
+        "FR-002",
+        "FRA-N001",
+        "FRA-N010",
+        "FRA-N004",
+        "FRA-N003",
+        "PCI-N009",
+        "PCI-N001",
+        "CRO-N008",
+        "INT-N003",
+        "REA-N009"
+      ],
+      "cited": [
+        "FR-002"
+      ],
+      "answer": "Scores between 650 and 820 go to the manual review queue, which has a 4-hour SLA. The strongest ATO pattern is a new device fingerprint, followed by a password reset and a change of payout bank account within 24 hours.",
+      "tool_calls": 4,
+      "latency_s": 0.0009,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q05",
+      "question": "Bots are hammering our checkout with tiny authorizations to validate stolen cards. How should we respond?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-003"
+      ],
+      "retrieved": [
+        "FR-003",
+        "FRA-N005",
+        "FRA-N010",
+        "FRA-N006",
+        "AS-003",
+        "CRO-N009",
+        "CRO-N008",
+        "CRO-N001"
+      ],
+      "cited": [
+        "FR-003"
+      ],
+      "answer": "Card testing, also called card enumeration, is when bots submit many small authorizations, usually under $1, to validate stolen card numbers. During a card testing attack, enable CAPTCHA on the hosted checkout and rate-limit authorization requests to 20 per minute per IP address.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q06",
+      "question": "How often is the Sentinel fraud model retrained?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-004"
+      ],
+      "retrieved": [
+        "FR-004",
+        "FRA-N001",
+        "FRA-N004",
+        "FRA-N003",
+        "FRA-N002",
+        "FRA-N007",
+        "MER-N003",
+        "MER-N008"
+      ],
+      "cited": [
+        "FR-004"
+      ],
+      "answer": "Sentinel v3 is retrained every 6 weeks on the latest labelled chargeback and confirmed-fraud data. NovaPay scores every transaction with the gradient-boosted fraud model Sentinel v3.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q07",
+      "question": "Which PSI value triggers a model drift alert?",
+      "true_category": "fraud_detection",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "FR-004"
+      ],
+      "retrieved": [
+        "FR-004",
+        "CHA-N006",
+        "CHA-N010",
+        "MER-N003",
+        "MER-N008",
+        "MER-N004",
+        "IP-001",
+        "KYC-001"
+      ],
+      "cited": [
+        "FR-004"
+      ],
+      "answer": "Model drift is monitored with the population stability index (PSI); an alert fires when PSI exceeds 0.2 on any top-20 feature. NovaPay scores every transaction with the gradient-boosted fraud model Sentinel v3.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q08",
+      "question": "How many days does a merchant have to send representment evidence after a chargeback notification?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-001"
+      ],
+      "retrieved": [
+        "CB-001",
+        "CHA-N008",
+        "CHA-N003",
+        "CB-003",
+        "CHA-N001",
+        "CHA-N002",
+        "CHA-N005",
+        "CB-002"
+      ],
+      "cited": [
+        "CB-001"
+      ],
+      "answer": "Merchants must submit representment evidence to NovaPay within 20 calendar days of the chargeback notification. If the merchant misses the 20-day deadline the chargeback is automatically accepted and the funds are not recovered.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q09",
+      "question": "What happens if a merchant misses the representment deadline?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-001"
+      ],
+      "retrieved": [
+        "CB-001",
+        "CHA-N008",
+        "CHA-N003",
+        "CHA-N002",
+        "CHA-N001",
+        "PCI-N009",
+        "PCI-N006",
+        "CB-004"
+      ],
+      "cited": [
+        "CB-001"
+      ],
+      "answer": "If the merchant misses the 20-day deadline the chargeback is automatically accepted and the funds are not recovered. The card network deadline is 30 days, and NovaPay keeps the remaining 10 days to review and file the case.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q10",
+      "question": "What evidence does Compelling Evidence 3.0 require to fight Visa reason code 10.4?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-002"
+      ],
+      "retrieved": [
+        "CB-002",
+        "CB-001",
+        "CHA-N008",
+        "CHA-N007",
+        "CHA-N005",
+        "KYC-001",
+        "PCI-N008",
+        "PCI-N002"
+      ],
+      "cited": [
+        "CB-002"
+      ],
+      "answer": "Visa reason code 10.4 is Other Fraud in a card-absent environment. Under Compelling Evidence 3.0 the merchant can provide two prior undisputed transactions on the same card that are between 120 and 365 days old.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q11",
+      "question": "Which data elements must match the prior undisputed transactions for a card-absent fraud dispute?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "fraud_detection",
+      "relevant": [
+        "CB-002"
+      ],
+      "retrieved": [
+        "FRA-N004",
+        "FRA-N003",
+        "FRA-N002",
+        "FR-001",
+        "FR-004",
+        "CB-002",
+        "INT-N008",
+        "CB-004",
+        "KYC-004"
+      ],
+      "cited": [
+        "FRA-N004",
+        "FRA-N003"
+      ],
+      "answer": "On 2026-03-10 the team observed a spike in card-not-present fraud. On 2026-10-02 the team observed a spike in card-not-present fraud.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "hit@5": 0.0,
+      "mrr": 0.16666666666666666,
+      "ndcg@5": 0.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q12",
+      "question": "At what chargeback ratio is a merchant put on a remediation plan?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-003"
+      ],
+      "retrieved": [
+        "CB-003",
+        "CB-001",
+        "CB-004",
+        "CHA-N008",
+        "CHA-N005",
+        "CRO-N009",
+        "CRO-N008",
+        "INT-N007",
+        "CRO-N001",
+        "IP-004"
+      ],
+      "cited": [
+        "CB-003"
+      ],
+      "answer": "NovaPay sends a warning when a merchant's chargeback ratio reaches 0.65%. At 0.9% the merchant is placed on a mandatory remediation plan.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q13",
+      "question": "How is the monthly chargeback ratio calculated?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-003"
+      ],
+      "retrieved": [
+        "CB-003",
+        "CB-001",
+        "CB-004",
+        "INT-N002",
+        "INT-N004",
+        "FR-004",
+        "IP-004",
+        "FR-001"
+      ],
+      "cited": [
+        "CB-003"
+      ],
+      "answer": "The monthly chargeback ratio is the number of chargebacks received in a month divided by the number of sales transactions in the same month. NovaPay sends a warning when a merchant's chargeback ratio reaches 0.65%.",
+      "tool_calls": 4,
+      "latency_s": 0.0009,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q14",
+      "question": "A customer disputed a subscription renewal they forgot about. How does NovaPay deflect this kind of friendly fraud?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-004"
+      ],
+      "retrieved": [
+        "CB-004",
+        "CHA-N004",
+        "CHA-N005",
+        "CHA-N010",
+        "CB-002",
+        "RTP-003",
+        "IP-003",
+        "FRA-N001"
+      ],
+      "cited": [
+        "CB-004",
+        "CHA-N004"
+      ],
+      "answer": "Friendly fraud happens when a cardholder disputes a legitimate purchase, for example a forgotten subscription renewal. On 2026-03-24 the team observed subscription-related disputes.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q15",
+      "question": "Below what amount are pre-dispute alerts refunded automatically?",
+      "true_category": "chargebacks_disputes",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "CB-004"
+      ],
+      "retrieved": [
+        "CB-004",
+        "CHA-N007",
+        "CHA-N009",
+        "CHA-N008",
+        "CHA-N005",
+        "FRA-N001",
+        "FRA-N007",
+        "INT-N008",
+        "CRO-N006",
+        "CRO-N002"
+      ],
+      "cited": [
+        "CB-004"
+      ],
+      "answer": "Pre-dispute alerts under $25 are refunded automatically, which is cheaper than fighting the chargeback. NovaPay deflects disputes before they become chargebacks by using pre-dispute alerts from issuers.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q16",
+      "question": "Who signs NovaPay's annual Report on Compliance as a Level 1 service provider?",
+      "true_category": "pci_compliance",
+      "pred_category": "pci_compliance",
+      "relevant": [
+        "PCI-001"
+      ],
+      "retrieved": [
+        "PCI-001",
+        "PCI-N008",
+        "PCI-N002",
+        "PCI-N007",
+        "PCI-N003",
+        "IP-003",
+        "FX-003",
+        "FR-001",
+        "CRO-N009",
+        "CRO-N004"
+      ],
+      "cited": [
+        "PCI-001"
+      ],
+      "answer": "NovaPay is a PCI DSS Level 1 service provider. Level 1 validation requires an annual Report on Compliance (ROC) signed by a Qualified Security Assessor (QSA).",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q17",
+      "question": "When did the future-dated PCI DSS v4.0 requirements become mandatory?",
+      "true_category": "pci_compliance",
+      "pred_category": "pci_compliance",
+      "relevant": [
+        "PCI-001"
+      ],
+      "retrieved": [
+        "PCI-001",
+        "PCI-004",
+        "PCI-003",
+        "PCI-N005",
+        "PCI-N004",
+        "PCI-N002",
+        "PCI-N001",
+        "KYC-003"
+      ],
+      "cited": [
+        "PCI-001"
+      ],
+      "answer": "The future-dated PCI DSS v4.0 requirements became mandatory on 31 March 2025. NovaPay is a PCI DSS Level 1 service provider.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q18",
+      "question": "Can we store the PAN in our application database?",
+      "true_category": "pci_compliance",
+      "pred_category": "merchant_onboarding_kyc",
+      "relevant": [
+        "PCI-002"
+      ],
+      "retrieved": [
+        "MER-N003",
+        "MER-N007",
+        "MER-N010",
+        "MER-N002",
+        "PCI-002"
+      ],
+      "cited": [
+        "MER-N003",
+        "MER-N007"
+      ],
+      "answer": "On 2026-09-11 the team observed a stalled merchant application. On 2026-10-13 the team observed a stalled merchant application.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 0.2,
+      "ndcg@5": 0.38685280723454163,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q19",
+      "question": "How must a PAN be masked when it is displayed?",
+      "true_category": "pci_compliance",
+      "pred_category": "pci_compliance",
+      "relevant": [
+        "PCI-002"
+      ],
+      "retrieved": [
+        "PCI-002"
+      ],
+      "cited": [
+        "PCI-002"
+      ],
+      "answer": "When a PAN is displayed it must be masked to at most the first six and last four digits. The primary account number (PAN) is never stored in application databases.",
+      "tool_calls": 3,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q20",
+      "question": "Is MFA required to access the cardholder data environment?",
+      "true_category": "pci_compliance",
+      "pred_category": "pci_compliance",
+      "relevant": [
+        "PCI-003"
+      ],
+      "retrieved": [
+        "PCI-003",
+        "PCI-002",
+        "CB-002",
+        "FX-001",
+        "IP-003",
+        "INT-N006",
+        "AS-003",
+        "INT-N008"
+      ],
+      "cited": [
+        "PCI-003",
+        "PCI-002"
+      ],
+      "answer": "Multi-factor authentication (MFA) is required for all access into the cardholder data environment (CDE), in line with PCI DSS requirement 8.4.2. The token vault runs in a segmented cardholder data environment and its encryption keys are rotated annually in a hardware security module (HSM).",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q21",
+      "question": "How long must PCI audit logs be retained?",
+      "true_category": "pci_compliance",
+      "pred_category": "pci_compliance",
+      "relevant": [
+        "PCI-004"
+      ],
+      "retrieved": [
+        "PCI-004",
+        "PCI-N005",
+        "PCI-N004",
+        "PCI-N002",
+        "PCI-N001",
+        "PCI-001",
+        "PCI-003"
+      ],
+      "cited": [
+        "PCI-004"
+      ],
+      "answer": "Audit logs for systems in scope of PCI DSS are retained for at least 12 months. The most recent 3 months of audit logs must be immediately available for analysis, per requirement 10.5.1.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q22",
+      "question": "What does ISO 8583 message type 0100 mean?",
+      "true_category": "authorization_settlement",
+      "pred_category": "real_time_payments",
+      "relevant": [
+        "AS-001"
+      ],
+      "retrieved": [
+        "RTP-002",
+        "REA-N003",
+        "REA-N008",
+        "REA-N010",
+        "REA-N002",
+        "AS-001"
+      ],
+      "cited": [
+        "RTP-002",
+        "REA-N003"
+      ],
+      "answer": "Instant payment rails use ISO 20022 messages. pacs.008 is the customer credit transfer message that moves the funds. pacs.002 is the payment status report that confirms acceptance or rejection. camt.056 is used to request the cancellation or return of a payment, and pain.013 is the request for payment message. The operations team corrected the message mapping.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "hit@5": 0.0,
+      "mrr": 0.16666666666666666,
+      "ndcg@5": 0.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q23",
+      "question": "What does response code 51 mean on an authorization?",
+      "true_category": "authorization_settlement",
+      "pred_category": "authorization_settlement",
+      "relevant": [
+        "AS-001"
+      ],
+      "retrieved": [
+        "AS-001",
+        "AS-004",
+        "AUT-N004",
+        "AUT-N002",
+        "AUT-N003",
+        "CB-002",
+        "FR-003",
+        "AS-003"
+      ],
+      "cited": [
+        "AS-001"
+      ],
+      "answer": "Common response codes are 00 approved, 05 do not honor and 51 insufficient funds. Message type 0100 is the authorization request and 0110 is the authorization response.",
+      "tool_calls": 4,
+      "latency_s": 0.0009,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q24",
+      "question": "When do merchants get paid out after their transactions are captured?",
+      "true_category": "authorization_settlement",
+      "pred_category": "authorization_settlement",
+      "relevant": [
+        "AS-002"
+      ],
+      "retrieved": [
+        "AS-002",
+        "AS-003",
+        "IP-001",
+        "IP-004",
+        "KYC-001",
+        "CB-003",
+        "RTP-004",
+        "FR-001"
+      ],
+      "cited": [
+        "AS-002"
+      ],
+      "answer": "Merchants are paid out on a T+2 business day settlement schedule by default. NovaPay batches captured transactions for clearing at a daily cut-off of 23:00 UTC.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q25",
+      "question": "What is the daily clearing cut-off time?",
+      "true_category": "authorization_settlement",
+      "pred_category": "authorization_settlement",
+      "relevant": [
+        "AS-002"
+      ],
+      "retrieved": [
+        "AS-002",
+        "AUT-N007",
+        "AUT-N001",
+        "AUT-N004",
+        "AUT-N006",
+        "FX-002",
+        "PCI-004",
+        "RTP-001"
+      ],
+      "cited": [
+        "AS-002"
+      ],
+      "answer": "NovaPay batches captured transactions for clearing at a daily cut-off of 23:00 UTC. Clearing files are submitted to the card networks after the cut-off.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q26",
+      "question": "How long until an uncaptured authorization hold is voided?",
+      "true_category": "authorization_settlement",
+      "pred_category": "authorization_settlement",
+      "relevant": [
+        "AS-003"
+      ],
+      "retrieved": [
+        "AS-003",
+        "AUT-N004",
+        "AUT-N002",
+        "AUT-N003",
+        "AS-001",
+        "FX-002",
+        "FX-004",
+        "AUT-N009"
+      ],
+      "cited": [
+        "AS-003"
+      ],
+      "answer": "NovaPay automatically voids uncaptured authorizations after 7 days to release the hold. An authorization places a hold on the cardholder's available funds until the transaction is captured.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q27",
+      "question": "Can a hotel increase the amount held on a guest's card?",
+      "true_category": "authorization_settlement",
+      "pred_category": "chargebacks_disputes",
+      "relevant": [
+        "AS-003"
+      ],
+      "retrieved": [
+        "CHA-N007",
+        "CHA-N009",
+        "CB-003",
+        "CB-002",
+        "CB-001",
+        "AS-003",
+        "FX-003",
+        "CRO-N008",
+        "CRO-N009",
+        "FR-001"
+      ],
+      "cited": [
+        "CHA-N007",
+        "CHA-N009"
+      ],
+      "answer": "On 2026-08-27 the team observed an increase in dispute alerts. On 2026-01-15 the team observed an increase in dispute alerts.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "hit@5": 0.0,
+      "mrr": 0.16666666666666666,
+      "ndcg@5": 0.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q28",
+      "question": "Should we retry a soft decline like response code 91 issuer unavailable?",
+      "true_category": "authorization_settlement",
+      "pred_category": "authorization_settlement",
+      "relevant": [
+        "AS-004"
+      ],
+      "retrieved": [
+        "AS-004",
+        "AUT-N002",
+        "AUT-N004",
+        "AUT-N003",
+        "AS-001",
+        "CB-002",
+        "FR-003",
+        "FX-003"
+      ],
+      "cited": [
+        "AS-004"
+      ],
+      "answer": "NovaPay retries soft declines such as response code 91 issuer unavailable up to 3 times over 72 hours. Declines are either soft declines, which may succeed later, or hard declines, which will not.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q29",
+      "question": "Which hard declines are never retried?",
+      "true_category": "authorization_settlement",
+      "pred_category": "authorization_settlement",
+      "relevant": [
+        "AS-004"
+      ],
+      "retrieved": [
+        "AS-004"
+      ],
+      "cited": [
+        "AS-004"
+      ],
+      "answer": "Hard declines such as 04 pick up card and 14 invalid card number are never retried. Declines are either soft declines, which may succeed later, or hard declines, which will not.",
+      "tool_calls": 3,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q30",
+      "question": "What are the three components of Interchange++ pricing?",
+      "true_category": "interchange_pricing",
+      "pred_category": "interchange_pricing",
+      "relevant": [
+        "IP-001"
+      ],
+      "retrieved": [
+        "IP-001",
+        "IP-004",
+        "INT-N003",
+        "INT-N008",
+        "INT-N006",
+        "INT-N007",
+        "INT-N009",
+        "IP-002"
+      ],
+      "cited": [
+        "IP-001",
+        "IP-004"
+      ],
+      "answer": "Under Interchange++ (IC++) pricing the merchant pays three components: the interchange fee, the card scheme fee, and the NovaPay markup. Merchants are migrated to Interchange++ pricing when monthly card volume exceeds $250,000.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q31",
+      "question": "What is NovaPay's standard markup on IC++?",
+      "true_category": "interchange_pricing",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "IP-001"
+      ],
+      "retrieved": [
+        "FX-001",
+        "FX-003",
+        "FX-002",
+        "IP-001",
+        "FR-001",
+        "PCI-002",
+        "IP-004",
+        "AS-003",
+        "CB-003"
+      ],
+      "cited": [
+        "FX-001"
+      ],
+      "answer": "The NovaPay DCC markup is capped at 3.5% over the wholesale exchange rate. The cardholder must actively opt in to DCC, and the exchange rate and markup must be disclosed before payment.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 0.25,
+      "ndcg@5": 0.43067655807339306,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q32",
+      "question": "What is the Durbin regulated debit interchange cap?",
+      "true_category": "interchange_pricing",
+      "pred_category": "interchange_pricing",
+      "relevant": [
+        "IP-002"
+      ],
+      "retrieved": [
+        "IP-002",
+        "INT-N006",
+        "IP-001",
+        "INT-N003",
+        "INT-N008",
+        "IP-004",
+        "IP-003"
+      ],
+      "cited": [
+        "IP-002"
+      ],
+      "answer": "Debit cards from smaller exempt issuers are not subject to the regulated interchange cap. Under the Durbin Amendment and Regulation II, debit interchange for issuers with more than $10 billion in assets is capped.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 0.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q33",
+      "question": "What extra data do B2B purchasing cards need to qualify for lower interchange?",
+      "true_category": "interchange_pricing",
+      "pred_category": "interchange_pricing",
+      "relevant": [
+        "IP-003"
+      ],
+      "retrieved": [
+        "IP-003",
+        "INT-N006",
+        "IP-002",
+        "INT-N008",
+        "IP-001",
+        "INT-N003",
+        "KYC-001",
+        "CRO-N009"
+      ],
+      "cited": [
+        "IP-003"
+      ],
+      "answer": "Commercial and purchasing cards qualify for lower interchange when enhanced data is sent. NovaPay automatically populates Level 2 and Level 3 fields from invoices for B2B merchants.",
+      "tool_calls": 4,
+      "latency_s": 0.001,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q34",
+      "question": "What is the flat rate on the NovaPay Starter plan?",
+      "true_category": "interchange_pricing",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "IP-004"
+      ],
+      "retrieved": [
+        "CRO-N004",
+        "CRO-N009",
+        "CRO-N007",
+        "CRO-N005",
+        "CRO-N003",
+        "IP-004",
+        "FX-001",
+        "AS-002"
+      ],
+      "cited": [
+        "CRO-N004"
+      ],
+      "answer": "On 2026-05-20 the team observed FX rate complaints from cardholders. The operations team switched the rate provider.",
+      "tool_calls": 4,
+      "latency_s": 0.0009,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "hit@5": 0.0,
+      "mrr": 0.16666666666666666,
+      "ndcg@5": 0.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q35",
+      "question": "At what monthly card volume is a merchant moved to Interchange++ pricing?",
+      "true_category": "interchange_pricing",
+      "pred_category": "interchange_pricing",
+      "relevant": [
+        "IP-004"
+      ],
+      "retrieved": [
+        "IP-004",
+        "IP-001",
+        "INT-N003",
+        "INT-N008",
+        "INT-N007",
+        "INT-N002",
+        "INT-N006",
+        "INT-N009"
+      ],
+      "cited": [
+        "IP-004",
+        "IP-001"
+      ],
+      "answer": "Merchants are migrated to Interchange++ pricing when monthly card volume exceeds $250,000. Under Interchange++ (IC++) pricing the merchant pays three components: the interchange fee, the card scheme fee, and the NovaPay markup.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q36",
+      "question": "What is the maximum markup allowed for dynamic currency conversion?",
+      "true_category": "cross_border_fx",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "FX-001"
+      ],
+      "retrieved": [
+        "FX-001",
+        "CRO-N002",
+        "FX-002",
+        "CRO-N007",
+        "CRO-N003",
+        "IP-001",
+        "CRO-N010",
+        "AS-003"
+      ],
+      "cited": [
+        "FX-001",
+        "CRO-N002"
+      ],
+      "answer": "Dynamic currency conversion (DCC) lets a foreign cardholder pay in their home currency at the point of sale. On 2026-03-14 the team observed currency conversion errors.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q37",
+      "question": "Can DCC be pre-selected for a foreign cardholder at the point of sale?",
+      "true_category": "cross_border_fx",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "FX-001"
+      ],
+      "retrieved": [
+        "FX-001",
+        "CRO-N009",
+        "CRO-N008",
+        "CRO-N001",
+        "FX-003",
+        "CB-004",
+        "PCI-003",
+        "AS-003"
+      ],
+      "cited": [
+        "FX-001"
+      ],
+      "answer": "Dynamic currency conversion (DCC) lets a foreign cardholder pay in their home currency at the point of sale. DCC must never be the pre-selected default option.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 0.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q38",
+      "question": "How many currencies can merchants settle in?",
+      "true_category": "cross_border_fx",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "FX-002"
+      ],
+      "retrieved": [
+        "FX-002",
+        "RTP-001",
+        "KYC-001",
+        "AS-002",
+        "IP-004",
+        "KYC-004",
+        "AS-003",
+        "KYC-003"
+      ],
+      "cited": [
+        "FX-002",
+        "RTP-001"
+      ],
+      "answer": "NovaPay supports multi-currency settlement in 14 currencies. Both rails settle individual payments 24 hours a day, 7 days a week, 365 days a year.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q39",
+      "question": "What conversion spread applies when the FX rate is locked at capture?",
+      "true_category": "cross_border_fx",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "FX-002"
+      ],
+      "retrieved": [
+        "FX-002",
+        "CRO-N004",
+        "CRO-N003",
+        "CRO-N005",
+        "CRO-N007",
+        "CRO-N002",
+        "FX-001",
+        "AS-003"
+      ],
+      "cited": [
+        "FX-002",
+        "CRO-N004"
+      ],
+      "answer": "The FX rate is locked at capture time and includes a 0.4% conversion spread. On 2026-05-20 the team observed FX rate complaints from cardholders.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q40",
+      "question": "What fee does NovaPay add for foreign-issued cards?",
+      "true_category": "cross_border_fx",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "FX-003"
+      ],
+      "retrieved": [
+        "FX-003",
+        "CRO-N009",
+        "CRO-N008",
+        "CRO-N001",
+        "FX-001",
+        "INT-N005",
+        "INT-N009",
+        "INT-N004",
+        "IP-001"
+      ],
+      "cited": [
+        "FX-003",
+        "CRO-N009"
+      ],
+      "answer": "NovaPay also adds a 1% international card fee on transactions with foreign-issued cards. Investigation found the root cause was foreign-issued cards on a domestic plan.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q41",
+      "question": "Which sanctions lists are cross-border payouts screened against?",
+      "true_category": "cross_border_fx",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "FX-004"
+      ],
+      "retrieved": [
+        "FX-004",
+        "CRO-N001",
+        "FX-003",
+        "CRO-N006",
+        "CRO-N005",
+        "REA-N007",
+        "REA-N001",
+        "AUT-N009",
+        "REA-N008",
+        "REA-N010"
+      ],
+      "cited": [
+        "FX-004",
+        "CRO-N001"
+      ],
+      "answer": "All cross-border payouts are screened against the OFAC SDN list and the EU and UN consolidated sanctions lists. On 2026-03-18 the team observed a cross-border payout delay.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q42",
+      "question": "Which MCCs are treated as high risk during underwriting?",
+      "true_category": "merchant_onboarding_kyc",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "KYC-001"
+      ],
+      "retrieved": [
+        "CRO-N010",
+        "FX-003",
+        "KYC-001",
+        "FRA-N001",
+        "FRA-N004",
+        "FRA-N003",
+        "KYC-004",
+        "FR-001"
+      ],
+      "cited": [
+        "CRO-N010",
+        "FX-003"
+      ],
+      "answer": "On 2026-01-03 the team observed high international card fees. Intra-EEA card transactions are treated as domestic for this fee.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg@5": 0.5,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q43",
+      "question": "How large is the rolling reserve for high-risk merchants and how long is it held?",
+      "true_category": "merchant_onboarding_kyc",
+      "pred_category": "cross_border_fx",
+      "relevant": [
+        "KYC-001"
+      ],
+      "retrieved": [
+        "CRO-N010",
+        "CRO-N009",
+        "CRO-N008",
+        "CRO-N006",
+        "FX-002",
+        "KYC-001",
+        "KYC-004",
+        "AS-003",
+        "MER-N005"
+      ],
+      "cited": [
+        "CRO-N010",
+        "CRO-N009"
+      ],
+      "answer": "On 2026-01-03 the team observed high international card fees. On 2026-04-08 the team observed a held international payout.",
+      "tool_calls": 4,
+      "latency_s": 0.001,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 0.0,
+      "precision@5": 0.0,
+      "hit@5": 0.0,
+      "mrr": 0.16666666666666666,
+      "ndcg@5": 0.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q44",
+      "question": "What ownership percentage makes someone a beneficial owner we must verify?",
+      "true_category": "merchant_onboarding_kyc",
+      "pred_category": "merchant_onboarding_kyc",
+      "relevant": [
+        "KYC-002"
+      ],
+      "retrieved": [
+        "MER-N005",
+        "MER-N002",
+        "MER-N009",
+        "KYC-002",
+        "MER-N007",
+        "MER-N006"
+      ],
+      "cited": [
+        "MER-N005",
+        "MER-N002"
+      ],
+      "answer": "On 2026-01-03 the team observed missing beneficial owner details. On 2026-08-06 the team observed missing beneficial owner details.",
+      "tool_calls": 4,
+      "latency_s": 0.0009,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 0.25,
+      "ndcg@5": 0.43067655807339306,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q45",
+      "question": "What documents are needed for Know Your Business checks?",
+      "true_category": "merchant_onboarding_kyc",
+      "pred_category": "merchant_onboarding_kyc",
+      "relevant": [
+        "KYC-003"
+      ],
+      "retrieved": [
+        "KYC-003",
+        "MER-N010",
+        "MER-N006",
+        "MER-N001",
+        "MER-N003",
+        "MER-N008",
+        "MER-N004",
+        "KYC-002"
+      ],
+      "cited": [
+        "KYC-003"
+      ],
+      "answer": "Know Your Business (KYB) checks require the business registration certificate and the tax ID or EIN. Applications missing documents expire after 30 days.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q46",
+      "question": "How often are merchant websites crawled for prohibited products?",
+      "true_category": "merchant_onboarding_kyc",
+      "pred_category": "merchant_onboarding_kyc",
+      "relevant": [
+        "KYC-004"
+      ],
+      "retrieved": [
+        "KYC-004",
+        "MER-N006",
+        "MER-N001",
+        "MER-N003",
+        "MER-N007",
+        "CHA-N008",
+        "CHA-N005",
+        "MER-N010"
+      ],
+      "cited": [
+        "KYC-004"
+      ],
+      "answer": "After onboarding, merchants are monitored for transaction laundering and prohibited products. NovaPay crawls each merchant website every 30 days to detect prohibited goods.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q47",
+      "question": "Which list are new merchants and their principals checked against before approval?",
+      "true_category": "merchant_onboarding_kyc",
+      "pred_category": "merchant_onboarding_kyc",
+      "relevant": [
+        "KYC-004"
+      ],
+      "retrieved": [
+        "KYC-004",
+        "KYC-001",
+        "KYC-003",
+        "FRA-N005",
+        "INT-N007",
+        "FRA-N009",
+        "FX-004",
+        "AS-002",
+        "IP-004"
+      ],
+      "cited": [
+        "KYC-004",
+        "KYC-001"
+      ],
+      "answer": "Every new merchant and its principals are checked against the Mastercard MATCH list before approval. High-risk merchants are subject to a 10% rolling reserve held for 180 days.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q48",
+      "question": "When did the FedNow Service launch?",
+      "true_category": "real_time_payments",
+      "pred_category": "real_time_payments",
+      "relevant": [
+        "RTP-001"
+      ],
+      "retrieved": [
+        "RTP-001",
+        "PCI-001"
+      ],
+      "cited": [
+        "RTP-001",
+        "PCI-001"
+      ],
+      "answer": "In the United States, instant payments run on The Clearing House RTP network, launched in 2017, and the Federal Reserve FedNow Service, launched in July 2023. NovaPay is a PCI DSS Level 1 service provider.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q49",
+      "question": "What is the per-transaction cap on instant payouts?",
+      "true_category": "real_time_payments",
+      "pred_category": "real_time_payments",
+      "relevant": [
+        "RTP-001"
+      ],
+      "retrieved": [
+        "REA-N001",
+        "REA-N007",
+        "REA-N008",
+        "REA-N010",
+        "RTP-001",
+        "RTP-003",
+        "IP-002",
+        "REA-N004"
+      ],
+      "cited": [
+        "REA-N001",
+        "REA-N007"
+      ],
+      "answer": "On 2026-05-01 the team observed failed instant payouts. On 2026-02-16 the team observed failed instant payouts.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@1": 0.0,
+      "recall@3": 0.0,
+      "precision@3": 0.0,
+      "hit@3": 0.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 0.2,
+      "ndcg@5": 0.38685280723454163,
+      "fact_recall": 0.0,
+      "citation_precision": 0.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q50",
+      "question": "Which ISO 20022 message is the customer credit transfer used on instant payment rails?",
+      "true_category": "real_time_payments",
+      "pred_category": "real_time_payments",
+      "relevant": [
+        "RTP-002"
+      ],
+      "retrieved": [
+        "RTP-002",
+        "REA-N002",
+        "RTP-001",
+        "REA-N005",
+        "REA-N004",
+        "AS-001",
+        "RTP-004",
+        "REA-N008"
+      ],
+      "cited": [
+        "RTP-002",
+        "REA-N002"
+      ],
+      "answer": "Instant payment rails use ISO 20022 messages. pacs.008 is the customer credit transfer message that moves the funds. pacs.002 is the payment status report that confirms acceptance or rejection. camt.056 is used to request the cancellation or return of a payment, and pain.013 is the request for payment message. On 2026-02-28 the team observed instant payment rail downtime.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q51",
+      "question": "How do we protect instant payouts from authorized push payment scams?",
+      "true_category": "real_time_payments",
+      "pred_category": "real_time_payments",
+      "relevant": [
+        "RTP-003"
+      ],
+      "retrieved": [
+        "RTP-003",
+        "REA-N001",
+        "REA-N007",
+        "REA-N008",
+        "REA-N010",
+        "RTP-001",
+        "REA-N005",
+        "REA-N004"
+      ],
+      "cited": [
+        "RTP-003",
+        "REA-N001"
+      ],
+      "answer": "Because instant payouts are irrevocable they are a target for authorized push payment (APP) fraud. On 2026-05-01 the team observed failed instant payouts.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 0.0,
+      "citation_precision": 0.5,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q52",
+      "question": "When does an unanswered request for payment expire?",
+      "true_category": "real_time_payments",
+      "pred_category": "real_time_payments",
+      "relevant": [
+        "RTP-004"
+      ],
+      "retrieved": [
+        "RTP-004",
+        "RTP-002",
+        "REA-N005",
+        "REA-N002",
+        "REA-N004",
+        "INT-N009",
+        "PCI-N007",
+        "INT-N007"
+      ],
+      "cited": [
+        "RTP-004"
+      ],
+      "answer": "At NovaPay an unanswered request for payment expires after 48 hours by default. Request for Payment (RfP) lets a biller send a pain.013 request that the payer approves in their banking app.",
+      "tool_calls": 4,
+      "latency_s": 0.0008,
+      "error": null,
+      "in_scope": true,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@1": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@3": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "fact_recall": 1.0,
+      "citation_precision": 1.0,
+      "groundedness": 1.0
+    },
+    {
+      "id": "q53",
+      "question": "What is a good recipe for sourdough bread?",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0004,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q54",
+      "question": "Who won the football World Cup in 2022?",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0005,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q55",
+      "question": "How do I configure Kubernetes horizontal pod autoscaling?",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0004,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q56",
+      "question": "What's the weather forecast for Tokyo tomorrow?",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [
+        "AS-003",
+        "FX-003",
+        "CB-003",
+        "FR-001"
+      ],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0004,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q57",
+      "question": "Recommend a good science fiction novel to read on vacation.",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0005,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q58",
+      "question": "How do I train a puppy to sit?",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0004,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q59",
+      "question": "What is the capital city of Australia?",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0004,
+      "error": null,
+      "in_scope": false
+    },
+    {
+      "id": "q60",
+      "question": "Translate 'good morning' into Italian.",
+      "true_category": "out_of_scope",
+      "pred_category": "out_of_scope",
+      "relevant": [],
+      "retrieved": [],
+      "cited": [],
+      "answer": "I could not find this in the NovaPay payments knowledge base.",
+      "tool_calls": 1,
+      "latency_s": 0.0004,
+      "error": null,
+      "in_scope": false
+    }
+  ]
+}

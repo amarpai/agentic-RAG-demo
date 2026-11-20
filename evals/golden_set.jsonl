@@ -1,0 +1,60 @@
+{"id": "q01", "question": "How many card-not-present authorization attempts in 10 minutes trigger a velocity flag?", "category": "fraud_detection", "relevant_doc_ids": ["FR-001"], "must_include": ["5"]}
+{"id": "q02", "question": "What happens to a transaction once it is flagged by the CNP velocity rules?", "category": "fraud_detection", "relevant_doc_ids": ["FR-001"], "must_include": ["3-D Secure"]}
+{"id": "q03", "question": "At what account takeover risk score are merchant payouts frozen automatically?", "category": "fraud_detection", "relevant_doc_ids": ["FR-002"], "must_include": ["820"]}
+{"id": "q04", "question": "What is the SLA for the ATO manual review queue?", "category": "fraud_detection", "relevant_doc_ids": ["FR-002"], "must_include": ["4-hour"]}
+{"id": "q05", "question": "Bots are hammering our checkout with tiny authorizations to validate stolen cards. How should we respond?", "category": "fraud_detection", "relevant_doc_ids": ["FR-003"], "must_include": ["CAPTCHA"]}
+{"id": "q06", "question": "How often is the Sentinel fraud model retrained?", "category": "fraud_detection", "relevant_doc_ids": ["FR-004"], "must_include": ["6 weeks"]}
+{"id": "q07", "question": "Which PSI value triggers a model drift alert?", "category": "fraud_detection", "relevant_doc_ids": ["FR-004"], "must_include": ["0.2"]}
+{"id": "q08", "question": "How many days does a merchant have to send representment evidence after a chargeback notification?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-001"], "must_include": ["20"]}
+{"id": "q09", "question": "What happens if a merchant misses the representment deadline?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-001"], "must_include": ["automatically accepted"]}
+{"id": "q10", "question": "What evidence does Compelling Evidence 3.0 require to fight Visa reason code 10.4?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-002"], "must_include": ["120", "365"]}
+{"id": "q11", "question": "Which data elements must match the prior undisputed transactions for a card-absent fraud dispute?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-002"], "must_include": ["IP address"]}
+{"id": "q12", "question": "At what chargeback ratio is a merchant put on a remediation plan?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-003"], "must_include": ["0.9%"]}
+{"id": "q13", "question": "How is the monthly chargeback ratio calculated?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-003"], "must_include": ["divided by"]}
+{"id": "q14", "question": "A customer disputed a subscription renewal they forgot about. How does NovaPay deflect this kind of friendly fraud?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-004"], "must_include": ["pre-dispute alerts"]}
+{"id": "q15", "question": "Below what amount are pre-dispute alerts refunded automatically?", "category": "chargebacks_disputes", "relevant_doc_ids": ["CB-004"], "must_include": ["$25"]}
+{"id": "q16", "question": "Who signs NovaPay's annual Report on Compliance as a Level 1 service provider?", "category": "pci_compliance", "relevant_doc_ids": ["PCI-001"], "must_include": ["QSA"]}
+{"id": "q17", "question": "When did the future-dated PCI DSS v4.0 requirements become mandatory?", "category": "pci_compliance", "relevant_doc_ids": ["PCI-001"], "must_include": ["31 March 2025"]}
+{"id": "q18", "question": "Can we store the PAN in our application database?", "category": "pci_compliance", "relevant_doc_ids": ["PCI-002"], "must_include": ["never stored"]}
+{"id": "q19", "question": "How must a PAN be masked when it is displayed?", "category": "pci_compliance", "relevant_doc_ids": ["PCI-002"], "must_include": ["first six", "last four"]}
+{"id": "q20", "question": "Is MFA required to access the cardholder data environment?", "category": "pci_compliance", "relevant_doc_ids": ["PCI-003"], "must_include": ["8.4.2"]}
+{"id": "q21", "question": "How long must PCI audit logs be retained?", "category": "pci_compliance", "relevant_doc_ids": ["PCI-004"], "must_include": ["12 months"]}
+{"id": "q22", "question": "What does ISO 8583 message type 0100 mean?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-001"], "must_include": ["authorization request"]}
+{"id": "q23", "question": "What does response code 51 mean on an authorization?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-001"], "must_include": ["insufficient funds"]}
+{"id": "q24", "question": "When do merchants get paid out after their transactions are captured?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-002"], "must_include": ["T+2"]}
+{"id": "q25", "question": "What is the daily clearing cut-off time?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-002"], "must_include": ["23:00 UTC"]}
+{"id": "q26", "question": "How long until an uncaptured authorization hold is voided?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-003"], "must_include": ["7 days"]}
+{"id": "q27", "question": "Can a hotel increase the amount held on a guest's card?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-003"], "must_include": ["incremental authorizations"]}
+{"id": "q28", "question": "Should we retry a soft decline like response code 91 issuer unavailable?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-004"], "must_include": ["3 times"]}
+{"id": "q29", "question": "Which hard declines are never retried?", "category": "authorization_settlement", "relevant_doc_ids": ["AS-004"], "must_include": ["pick up card"]}
+{"id": "q30", "question": "What are the three components of Interchange++ pricing?", "category": "interchange_pricing", "relevant_doc_ids": ["IP-001"], "must_include": ["scheme fee"]}
+{"id": "q31", "question": "What is NovaPay's standard markup on IC++?", "category": "interchange_pricing", "relevant_doc_ids": ["IP-001"], "must_include": ["0.25%"]}
+{"id": "q32", "question": "What is the Durbin regulated debit interchange cap?", "category": "interchange_pricing", "relevant_doc_ids": ["IP-002"], "must_include": ["21 cents"]}
+{"id": "q33", "question": "What extra data do B2B purchasing cards need to qualify for lower interchange?", "category": "interchange_pricing", "relevant_doc_ids": ["IP-003"], "must_include": ["Level 2"]}
+{"id": "q34", "question": "What is the flat rate on the NovaPay Starter plan?", "category": "interchange_pricing", "relevant_doc_ids": ["IP-004"], "must_include": ["2.9%"]}
+{"id": "q35", "question": "At what monthly card volume is a merchant moved to Interchange++ pricing?", "category": "interchange_pricing", "relevant_doc_ids": ["IP-004"], "must_include": ["$250,000"]}
+{"id": "q36", "question": "What is the maximum markup allowed for dynamic currency conversion?", "category": "cross_border_fx", "relevant_doc_ids": ["FX-001"], "must_include": ["3.5%"]}
+{"id": "q37", "question": "Can DCC be pre-selected for a foreign cardholder at the point of sale?", "category": "cross_border_fx", "relevant_doc_ids": ["FX-001"], "must_include": ["opt in"]}
+{"id": "q38", "question": "How many currencies can merchants settle in?", "category": "cross_border_fx", "relevant_doc_ids": ["FX-002"], "must_include": ["14"]}
+{"id": "q39", "question": "What conversion spread applies when the FX rate is locked at capture?", "category": "cross_border_fx", "relevant_doc_ids": ["FX-002"], "must_include": ["0.4%"]}
+{"id": "q40", "question": "What fee does NovaPay add for foreign-issued cards?", "category": "cross_border_fx", "relevant_doc_ids": ["FX-003"], "must_include": ["1%"]}
+{"id": "q41", "question": "Which sanctions lists are cross-border payouts screened against?", "category": "cross_border_fx", "relevant_doc_ids": ["FX-004"], "must_include": ["OFAC"]}
+{"id": "q42", "question": "Which MCCs are treated as high risk during underwriting?", "category": "merchant_onboarding_kyc", "relevant_doc_ids": ["KYC-001"], "must_include": ["7995"]}
+{"id": "q43", "question": "How large is the rolling reserve for high-risk merchants and how long is it held?", "category": "merchant_onboarding_kyc", "relevant_doc_ids": ["KYC-001"], "must_include": ["10%", "180 days"]}
+{"id": "q44", "question": "What ownership percentage makes someone a beneficial owner we must verify?", "category": "merchant_onboarding_kyc", "relevant_doc_ids": ["KYC-002"], "must_include": ["25%"]}
+{"id": "q45", "question": "What documents are needed for Know Your Business checks?", "category": "merchant_onboarding_kyc", "relevant_doc_ids": ["KYC-003"], "must_include": ["registration certificate"]}
+{"id": "q46", "question": "How often are merchant websites crawled for prohibited products?", "category": "merchant_onboarding_kyc", "relevant_doc_ids": ["KYC-004"], "must_include": ["30 days"]}
+{"id": "q47", "question": "Which list are new merchants and their principals checked against before approval?", "category": "merchant_onboarding_kyc", "relevant_doc_ids": ["KYC-004"], "must_include": ["MATCH"]}
+{"id": "q48", "question": "When did the FedNow Service launch?", "category": "real_time_payments", "relevant_doc_ids": ["RTP-001"], "must_include": ["July 2023"]}
+{"id": "q49", "question": "What is the per-transaction cap on instant payouts?", "category": "real_time_payments", "relevant_doc_ids": ["RTP-001"], "must_include": ["$100,000"]}
+{"id": "q50", "question": "Which ISO 20022 message is the customer credit transfer used on instant payment rails?", "category": "real_time_payments", "relevant_doc_ids": ["RTP-002"], "must_include": ["pacs.008"]}
+{"id": "q51", "question": "How do we protect instant payouts from authorized push payment scams?", "category": "real_time_payments", "relevant_doc_ids": ["RTP-003"], "must_include": ["confirmation of payee"]}
+{"id": "q52", "question": "When does an unanswered request for payment expire?", "category": "real_time_payments", "relevant_doc_ids": ["RTP-004"], "must_include": ["48 hours"]}
+{"id": "q53", "question": "What is a good recipe for sourdough bread?", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q54", "question": "Who won the football World Cup in 2022?", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q55", "question": "How do I configure Kubernetes horizontal pod autoscaling?", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q56", "question": "What's the weather forecast for Tokyo tomorrow?", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q57", "question": "Recommend a good science fiction novel to read on vacation.", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q58", "question": "How do I train a puppy to sit?", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q59", "question": "What is the capital city of Australia?", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}
+{"id": "q60", "question": "Translate 'good morning' into Italian.", "category": "out_of_scope", "relevant_doc_ids": [], "must_include": []}

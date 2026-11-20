@@ -1,0 +1,10 @@
+true \ predicted,fraud_detection,chargebacks_disputes,pci_compliance,authorization_settlement,interchange_pricing,cross_border_fx,merchant_onboarding_kyc,real_time_payments,out_of_scope
+fraud_detection,7,0,0,0,0,0,0,0,0
+chargebacks_disputes,1,7,0,0,0,0,0,0,0
+pci_compliance,0,0,5,0,0,0,1,0,0
+authorization_settlement,0,1,0,6,0,0,0,1,0
+interchange_pricing,0,0,0,0,4,2,0,0,0
+cross_border_fx,0,0,0,0,0,6,0,0,0
+merchant_onboarding_kyc,0,0,0,0,0,2,4,0,0
+real_time_payments,0,0,0,0,0,0,0,5,0
+out_of_scope,0,0,0,0,0,0,0,0,8

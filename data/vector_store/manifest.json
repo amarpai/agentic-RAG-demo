@@ -1,0 +1,7 @@
+{
+  "n_chunks": 112,
+  "n_docs": 112,
+  "dim": 96,
+  "vocab_size": 2779,
+  "fusion": "RRF(k=60) over TF-IDF + LSA"
+}
